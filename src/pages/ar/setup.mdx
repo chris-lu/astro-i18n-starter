@@ -4,7 +4,6 @@ title: "الإعداد"
 description: "حول عملية الإعداد"
 ---
 import PageHeadline from "@/components/PageHeadline.astro";
-import { SITE_TITLE } from "@/consts";
 
 <PageHeadline title={frontmatter.title} />
 
@@ -53,12 +52,12 @@ export default defineConfig({
 
 > [التوجيه الدولي (i18n) | الوثائق](https://docs.astro.build/en/guides/internationalization/#configure-i18n-routing)
 
-لا يُنصح بتغيير إعدادات `prefixDefaultLocale` و `redirectToDefaultLocale`. { SITE_TITLE } يدير عملية إعادة التوجيه باستخدام جافا سكريبت على الجانب العميل. إذا لم يحتوي عنوان URL على لغة، فسيتم إعادة التوجيه إلى اللغة الافتراضية. على سبيل المثال، سيتم إعادة التوجيه من `/setup/` إلى `/en/setup/`.
+لا يُنصح بتغيير إعدادات `prefixDefaultLocale` و `redirectToDefaultLocale`. ... يدير عملية إعادة التوجيه باستخدام جافا سكريبت على الجانب العميل. إذا لم يحتوي عنوان URL على لغة، فسيتم إعادة التوجيه إلى اللغة الافتراضية. على سبيل المثال، سيتم إعادة التوجيه من `/setup/` إلى `/en/setup/`.
 
 
 ### 2. تكوين /src/locales.ts
 
-بالمثل، قم بتحديث ملف التكوين لـ { SITE_TITLE }.
+بالمثل، قم بتحديث ملف التكوين لـ ....
 
 قم بتعيين اللغة الافتراضية في `DEFAULT_LOCALE_SETTING` وقائمة اللغات المرغوبة في `LOCALES_SETTING`. يتبع هذا [تكوين `locales` في Starlight](https://starlight.astro.build/reference/configuration/#locales).
 
@@ -134,4 +133,4 @@ src/
 
 ### src/i18n.ts
 
-ملف يحتوي على تعريفات الوظائف المستخدمة في { SITE_TITLE }. عمومًا، لا يوجد حاجة لتحرير هذا الملف.
+ملف يحتوي على تعريفات الوظائف المستخدمة في .... عمومًا، لا يوجد حاجة لتحرير هذا الملف.

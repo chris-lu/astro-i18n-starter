@@ -4,7 +4,7 @@ title: "初期設定"
 description: "初期設定方法について"
 ---
 import PageHeadline from "@/components/PageHeadline.astro";
-import { SITE_TITLE } from "@/consts";
+
 
 <PageHeadline title={frontmatter.title} />
 
@@ -53,11 +53,11 @@ astroの詳細な設定方法については公式ドキュメントを参考に
 
 > [Internationalization (i18n) Routing | Docs](https://docs.astro.build/en/guides/internationalization/#configure-i18n-routing)
 
-`prefixDefaultLocale`, `redirectToDefaultLocale` の設定を変えることはおすすめしません。{ SITE_TITLE } ではクライアント再度のJavascriptでリダイレクト処理を管理しており、URLにlocaleが含まれていない場合はデフォルトのlocaleにリダイレクトします。例えば `/setup/` は `/en/setup/` にリダイレクトされます。
+`prefixDefaultLocale`, `redirectToDefaultLocale` の設定を変えることはおすすめしません。... ではクライアント再度のJavascriptでリダイレクト処理を管理しており、URLにlocaleが含まれていない場合はデフォルトのlocaleにリダイレクトします。例えば `/setup/` は `/en/setup/` にリダイレクトされます。
 
 
 ### 2. /src/locales.ts の設定
-同様にして { SITE_TITLE } の設定ファイルを更新します。
+同様にして ... の設定ファイルを更新します。
 
 `DEFAULT_LOCALE_SETTING`に先ほど設定したデフォルトロケールを、`LOCALES_SETTING`には作成したいロケールのリストを設定します。こちらは[Starlightの`locales`設定](https://starlight.astro.build/reference/configuration/#locales) に準拠しています。
 
@@ -134,4 +134,4 @@ src/
 
 ### src/i18n.ts
 
-{ SITE_TITLE } で使用している関数などの定義ファイルです。基本的に編集する必要はありません。
+... で使用している関数などの定義ファイルです。基本的に編集する必要はありません。

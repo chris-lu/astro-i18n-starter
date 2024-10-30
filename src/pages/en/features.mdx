@@ -4,7 +4,6 @@ title: "Other Features"
 description: "This article explains other features available in the Astro i18n Theme."
 ---
 import PageHeadline from "@/components/PageHeadline.astro";
-import { SITE_TITLE } from "@/consts";
 
 <PageHeadline title={frontmatter.title} />
 
@@ -44,7 +43,7 @@ The text for the warning UI is set in `/src/const.ts` in the sample code.
 
 ## 404
 
-The { SITE_TITLE } 404 page consists of two files. If you want to customize the design of the 404 page, you generally only need to edit `src/pages/[lang]/404.astro`.
+The { "site.title" } 404 page consists of two files. If you want to customize the design of the 404 page, you generally only need to edit `src/pages/[lang]/404.astro`.
 
 ### src/pages/404.astro
 
@@ -54,7 +53,7 @@ This file generates the following:
 
 Most deploy services will find and use this file when a page is not found.
 
-When accessed with { SITE_TITLE }, it redirects to the following 404 page based on the user's system language:
+When accessed with { "site.title" }, it redirects to the following 404 page based on the user's system language:
 
 <details>
     <summary>Detailed Redirect Conditions</summary>
@@ -124,7 +123,7 @@ In some designs, you may want to adjust the letter-spacing for headings and othe
 
 > [Right-to-left Styling](https://rtlstyling.com/posts/rtl-styling#1.-letter-spacing)
 
-Therefore, please note that { SITE_TITLE } defines the following in `src/styles/base.css`:
+Therefore, please note that { "site.title" } defines the following in `src/styles/base.css`:
 
 ```css
 :lang(ar) {
@@ -139,7 +138,7 @@ In RTL languages, icons such as arrows need to be mirrored.
 
 > [Right to left | Apple Developer Documentation](https://developer.apple.com/design/human-interface-guidelines/right-to-left#Interface-icons)
 
-{ SITE_TITLE } uses [Material Icon](https://fonts.google.com/icons), and the following is defined in `src/styles/base.css`:
+{ "site.title" } uses [Material Icon](https://fonts.google.com/icons), and the following is defined in `src/styles/base.css`:
 
 ```css
 [class^="material-icons"]:dir(rtl).dir {

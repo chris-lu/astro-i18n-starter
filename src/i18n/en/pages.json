@@ -1,0 +1,26 @@
+[
+    {
+        "slug": "/",
+        "title": "Accueil"
+    },
+    {
+        "slug": "/page",
+        "title": "Add page"
+    },
+    {
+        "slug": "/monolingual",
+        "title": "Monolingual"
+    },
+    {
+        "slug": "/features",
+        "title": "Features"
+    },
+    {
+        "slug": "/blog",
+        "title": "Blog Astro"
+    },
+    {
+        "href": "https://github.com/psephopaiktes/astro-i18n-starter",
+        "title": "GitHub"
+    }
+]

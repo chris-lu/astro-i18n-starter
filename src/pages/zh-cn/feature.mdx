@@ -4,7 +4,6 @@ title: "其他功能"
 description: "介绍了 Astro i18n Theme 中可用的其他功能。"
 ---
 import PageHeadline from "@/components/PageHeadline.astro";
-import { SITE_TITLE } from "@/consts";
 
 <PageHeadline title={frontmatter.title} />
 
@@ -44,7 +43,7 @@ import { SITE_TITLE } from "@/consts";
 
 ## 404
 
-{ SITE_TITLE } 的 404 页面由两个文件组成。如果要自定义 404 页面的设计，通常只需编辑 `src/pages/[lang]/404.astro` 文件即可。
+... 的 404 页面由两个文件组成。如果要自定义 404 页面的设计，通常只需编辑 `src/pages/[lang]/404.astro` 文件即可。
 
 ### src/pages/404.astro
 
@@ -56,7 +55,7 @@ import { SITE_TITLE } from "@/consts";
 
 https://docs.astro.build/en/basics/astro-pages/#custom-404-error-page
 
-当用户访问 { SITE_TITLE } 并访问此文件时，根据用户的系统语言等，将重定向到以下 404 页面。
+当用户访问 ... 并访问此文件时，根据用户的系统语言等，将重定向到以下 404 页面。
 
 <details>
     <summary>详细的重定向条件</summary>
@@ -123,7 +122,7 @@ const locale = Astro.currentLocale as Lang;
 
 > [从右到左的样式](https://rtlstyling.com/posts/rtl-styling#1.-letter-spacing)
 
-因此，请注意在{ SITE_TITLE }的`src/styles/base.css`中定义了以下内容：
+因此，请注意在...的`src/styles/base.css`中定义了以下内容：
 
 ```css
 :lang(ar) {
@@ -138,7 +137,7 @@ const locale = Astro.currentLocale as Lang;
 
 > [从右到左 | Apple Developer Documentation](https://developer.apple.com/design/human-interface-guidelines/right-to-left#Interface-icons)
 
-在{ SITE_TITLE }中，我们使用[Material Icon](https://fonts.google.com/icons)，在`src/styles/base.css`中定义了以下内容：
+在...中，我们使用[Material Icon](https://fonts.google.com/icons)，在`src/styles/base.css`中定义了以下内容：
 
 ```css
 [class^="material-icons"]:dir(rtl).dir {

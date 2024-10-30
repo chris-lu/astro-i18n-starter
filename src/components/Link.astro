@@ -1,0 +1,23 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { type TranslationEntry } from "@/i18n/locales";
+import { type Lang } from "@/i18n";
+
+interface Props {
+  locale: Lang;
+  nav: TranslationEntry;
+  className?: string;
+}
+
+const { locale, nav } = Astro.props;
+
+const href = nav.slug ? getRelativeLocaleUrl(locale, nav.slug) : nav.href ? nav.href : '#'; 
+const isActive = () => Astro.url.pathname.startsWith(href);
+
+---
+
+<li role="presentation">
+  <a role="menuitem" href={href} class={isActive() ? "active" : null}>
+    <slot />
+  </a>
+</li>

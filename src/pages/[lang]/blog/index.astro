@@ -12,31 +12,17 @@ const posts = (await getCollection("blog"))
   .filter((post) => post.slug.split("/")[0] === locale)
   .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
 
-const title = t({
-  ja: "ブログ",
-  en: "Blog",
-  "zh-cn": "博客",
-  ar: "مدونة",
-});
-
 export const getStaticPaths = () =>
   Object.keys(LOCALES).map((lang) => ({
     params: { lang },
   }));
 ---
 
-<Layout {title}>
-  <PageHeadline {title} />
+<Layout title={t('blog.title')}>
+  <PageHeadline title={t('blog.title')} />
 
   <p>
-    {
-      t({
-        ja: "ブログやニュースコンテンツを管理したい場合のサンプルです。Astroのコンテンツコレクションを利用しています。",
-        en: "A sample for managing blog or news content. It uses Astro's content collection.",
-        "zh-cn": "用于管理博客或新闻内容的示例。它使用了Astro的内容集合。",
-        ar: "عينة لإدارة محتوى المدونة أو الأخبار. يستخدم مجموعة محتويات Astro.",
-      })
-    }
+      {t('blog.sample')}
   </p>
 
   <p>

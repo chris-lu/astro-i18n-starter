@@ -4,7 +4,6 @@ title: "ميزات أخرى"
 description: "سنشرح هنا المزيد من الميزات المتاحة في Astro i18n Theme."
 ---
 import PageHeadline from "@/components/PageHeadline.astro";
-import { SITE_TITLE } from "@/consts";
 
 <PageHeadline title={frontmatter.title} />
 
@@ -42,7 +41,7 @@ import { SITE_TITLE } from "@/consts";
 
 ## 404
 
-تتكون صفحة الخطأ 404 في { SITE_TITLE } من ملفين. إذا كنت ترغب في تخصيص تصميم صفحة الخطأ 404، يكفي تحرير الملف `src/pages/[lang]/404.astro` فقط.
+تتكون صفحة الخطأ 404 في ... من ملفين. إذا كنت ترغب في تخصيص تصميم صفحة الخطأ 404، يكفي تحرير الملف `src/pages/[lang]/404.astro` فقط.
 
 ### src/pages/404.astro
 
@@ -54,7 +53,7 @@ import { SITE_TITLE } from "@/consts";
 
 https://docs.astro.build/en/basics/astro-pages/#custom-404-error-page
 
-عندما يتم الوصول إلى هذا الملف في { SITE_TITLE }، سيتم إعادة توجيه المستخدم إلى صفحة الخطأ 404 المناسبة وفقًا للغة النظام وما إلى ذلك.
+عندما يتم الوصول إلى هذا الملف في ...، سيتم إعادة توجيه المستخدم إلى صفحة الخطأ 404 المناسبة وفقًا للغة النظام وما إلى ذلك.
 
 <details>
     <summary>شروط إعادة التوجيه التفصيلية</summary>
@@ -124,7 +123,7 @@ const locale = Astro.currentLocale as Lang;
 
 > [Right-to-left Styling](https://rtlstyling.com/posts/rtl-styling#1.-letter-spacing)
 
-لذلك، يرجى ملاحظة أنه في { SITE_TITLE }، يتم تعريف الكود التالي داخل ملف `src/styles/base.css`:
+لذلك، يرجى ملاحظة أنه في ...، يتم تعريف الكود التالي داخل ملف `src/styles/base.css`:
 
 ```css
 :lang(ar) {
@@ -139,7 +138,7 @@ const locale = Astro.currentLocale as Lang;
 
 > [Right to left | Apple Developer Documentation](https://developer.apple.com/design/human-interface-guidelines/right-to-left#Interface-icons)
 
-في { SITE_TITLE }، نستخدم [Material Icon](https://fonts.google.com/icons)، ويتم تعريف الكود التالي داخل ملف `src/styles/base.css`:
+في ...، نستخدم [Material Icon](https://fonts.google.com/icons)، ويتم تعريف الكود التالي داخل ملف `src/styles/base.css`:
 
 ```css
 [class^="material-icons"]:dir(rtl).dir {

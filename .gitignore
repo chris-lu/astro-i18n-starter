@@ -1,5 +1,5 @@
 # VS Code Settings
-.vscode/settings.json
+.vscode
 
 # build output
 dist/
@@ -8,6 +8,7 @@ dist/
 
 # dependencies
 node_modules/
+.work
 
 # logs
 npm-debug.log*

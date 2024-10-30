@@ -2,7 +2,6 @@
 // Alerts the user that the page is only available in a specific language
 
 import { useTranslations, type Lang } from "@/i18n";
-import { NOT_TRANSLATED_CAUTION } from "@/consts";
 
 interface Props {
   usedLangs: Lang[];
@@ -17,7 +16,7 @@ const currentLocale = Astro.currentLocale as Lang;
   !usedLangs.includes(currentLocale) && (
     <p>
       <span class="material-icons-sharp">warning</span>
-      {t(NOT_TRANSLATED_CAUTION)}
+      {t('not_translated')}
     </p>
   )
 }

@@ -1,7 +1,7 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
-import { localeParams } from "@/i18n";
+import { "site.description", "site.title" } from '@/consts';
+import { localeParams } from "@/i18n/i18n";
 
 
 export const getStaticPaths = () => localeParams;
@@ -11,12 +11,12 @@ export async function GET(context) {
 
 	const locale = context.params.lang;
 
-	const localeTitle = typeof SITE_TITLE == "string"
-		? SITE_TITLE
-		: SITE_TITLE[locale];
-	const localeDescription = typeof SITE_DESCRIPTION == "string"
-		? SITE_DESCRIPTION
-		: SITE_DESCRIPTION[locale];
+	const localeTitle = typeof "site.title" == "string"
+		? "site.title"
+		: "site.title"[locale];
+	const localeDescription = typeof "site.description" == "string"
+		? "site.description"
+		: "site.description"[locale];
 
 	const posts = await getCollection('blog', ({ slug }) => {
 		return slug.split("/")[0] == locale;

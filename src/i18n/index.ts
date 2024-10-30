@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE_SETTING, LOCALES_SETTING } from "./locales";
+import { DEFAULT_LOCALE_SETTING, LOCALES_SETTING, LOCALES_PAGES } from "./locales";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 
@@ -11,6 +11,7 @@ type LocaleConfig = {
   readonly label: string;
   readonly lang?: string;
   readonly dir?: "ltr" | "rtl";
+  readonly translations?: { [key: string]: string };
 };
 
 
@@ -43,15 +44,24 @@ export type Multilingual = { [key in Lang]?: string };
  * @returns - The translation function
  */
 export function useTranslations(lang: Lang) {
-  return function t(multilingual: Multilingual | string): string {
-    if (typeof multilingual === "string") {
-      return multilingual;
-    } else {
-      return multilingual[lang] || multilingual[DEFAULT_LOCALE] || "";
-    }
+  return function t(key: string): string {
+    return translate(lang, key);
   };
 }
 
+export function translate(lang: Lang, key: string): string {
+  return (LOCALES[lang] && LOCALES[lang].translations && LOCALES[lang].translations[key]) || key
+};
+
+/**
+ * Helper to get the translation function
+ * @param - The current language
+ * @returns - The available pages, translations and slugs
+ */
+export function getLocalePages(lang: Lang) {
+  
+  return (LOCALES_PAGES[lang]);
+}
 
 /**
  * Helper to get corresponding path list for all locales
@@ -70,7 +80,6 @@ type LocalePath = {
   lang: Lang;
   path: string;
 };
-
 
 /**
  * Helper to get locale parms for Astro's `getStaticPaths` function

@@ -1,18 +1,18 @@
 ---
 layout: "@/layouts/Article.astro"
-title: "إضافة صفحة"
-description: "إضافة وإدارة صفحات متعددة اللغات"
+title: "Adding Pages"
+description: "Adding and managing multilingual pages"
 ---
 import PageHeadline from "@/components/PageHeadline.astro";
 
 <PageHeadline title={frontmatter.title} />
 
-يوجد عدة طرق لإنشاء صفحات متعددة اللغات باستخدام ....
+There are several ways to create multilingual pages.
 
 
-## إذا كنت ترغب في تقسيم الملفات حسب اللغة
+## Separating Files by Language
 
-أنشئ مجلدًا لكل لغة تحت `pages` وأضف الملفات بتنسيق Astro أو Markdown.
+Create folders for each language under `pages` and add files in Astro or Markdown format.
 
 ```text
 src/pages
@@ -24,7 +24,7 @@ src/pages
   └── page-2.mdx
 ```
 
-سيتم إنشاء الصفحات التالية
+The following pages will be generated:
 
 * /en/page-1/index.html
 * /en/page-2/index.html
@@ -32,9 +32,9 @@ src/pages
 * /ja/page-2/index.html
 
 
-## إذا كنت ترغب في إدارة الصفحات في ملف واحد
+## Managing in a Single File
 
-إذا كانت النصوص غير كبيرة جدًا، يمكنك استخدام ميزة [توجيه Astro الديناميكي](https://docs.astro.build/en/guides/routing/#dynamic-routes) لإنشاء صفحات اللغات المختلفة من ملف واحد بشكل دينامي.
+If the amount of page content is not too large, you can use Astro's dynamic routing feature to generate pages for each language dynamically from a single file.
 
 ```text
 src/pages
@@ -43,7 +43,7 @@ src/pages
     └── page-2.astro
 ```
 
-استورد كائن `LOCALES` داخل الملف واستخدم دالة `getStaticPaths()` في Astro لإنشاء المسارات الديناميكية.
+Import the `LOCALES` object in the file and generate dynamic routes using Astro's `getStaticPaths()` function.
 
 ```astro
 ---
@@ -56,18 +56,18 @@ export const getStaticPaths = () =>
 ---
 ```
 
-سيتم إنشاء الصفحات التالية
+The following pages will be generated:
 
 * /en/page-1/index.html
 * /en/page-2/index.html
 * /ja/page-1/index.html
 * /ja/page-2/index.html
 
-## إذا كنت ترغب في استخدام مجموعة المحتوى
+## Using Content Collection
 
-إذا كنت ترغب في إدارة صفحات مثل المدونات أو الأخبار باستخدام ملفات Markdown، يمكنك استخدام ميزة [مجموعة المحتوى في Astro]().
+If you want to manage pages like blogs or news using Markdown files, you can use Astro's Content Collection feature.
 
-#### الدليل
+#### Directory
 
 ```text
 src/
@@ -103,6 +103,6 @@ export async function getStaticPaths() {
 ```
 
 
-لمزيد من التفاصيل، يرجى الاطلاع على وثائق Astro.
+Please refer to the Astro documentation for more details.
 
-> [مجموعات المحتوى | الوثائق](https://docs.astro.build/en/guides/content-collections/)
+> [Content Collections | Docs](https://docs.astro.build/en/guides/content-collections/)

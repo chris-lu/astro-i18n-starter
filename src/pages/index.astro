@@ -8,8 +8,8 @@ import {
   LOCALES,
   DEFAULT_LOCALE,
   type Lang,
-} from "@/i18n";
-import { SITE_TITLE, SITE_DESCRIPTION, X_ACCOUNT } from "@/consts";
+} from "@/i18n"
+import { X_ACCOUNT } from "@/consts";
 
 const t = useTranslations(Astro.currentLocale as Lang);
 const langs = Object.keys(LOCALES);
@@ -41,14 +41,14 @@ const defaultLocale = DEFAULT_LOCALE;
 
     <!-- OGP -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={t(SITE_TITLE)} />
-    <meta property="og:site_name" content={t(SITE_TITLE)} />
-    <meta property="og:description" content={t(SITE_DESCRIPTION)} />
+    <meta property="og:title" content={t("site.title")} />
+    <meta property="og:site_name" content={t("site.title")} />
+    <meta property="og:description" content={t("site.description")} />
     <meta property="og:image" content={Astro.site + "ogp.png"} />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:locale" content={DEFAULT_LOCALE} />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content={t(X_ACCOUNT)} />
+    <meta name="twitter:site" content={X_ACCOUNT} />
 
     <noscript>
       <meta
