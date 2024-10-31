@@ -1,11 +1,22 @@
 {
+    "site": {
+        "title": "Astro i18n Starter",
+        "description": "Astro i18n Starter"
+    },
     "index": {
-        "hello": "Hello",
-        "intro": "i18n Starter is a simple Astro theme for creating multilingual websites. It supports i18n feature from Astro v4.0.",
-        "subdirectories": "Basically, only the subdirectory URL scheme is supported. It is managed by the URL as follows for each language. The root URL is redirected to the specified default language."
+        "hello": "Bonjour",
+        "intro": "i18n Starter est un thème Astro simple pour créer des sites web multilingues. Il prend en charge la fonctionnalité i18n depuis Astro v4.0.",
+        "subdirectories": "Fondamentalement, seul le schéma d'URL de sous-répertoire est pris en charge. Il est géré par l'URL comme suit pour chaque langue. L'URL racine est redirigée vers la langue par défaut spécifiée."
     },
     "blog": {
         "title": "Blog",
-        "sample": "A sample for managing blog or news content. It uses Astro's content collection."
-    }
+        "sample": "Un exemple pour gérer le contenu de blogs ou d'actualités. Il utilise la collection de contenu d'Astro."
+    },
+    "404": {
+        "title": "Page Non Trouvée",
+        "description": "La page que vous recherchez est introuvable. Veuillez revenir en haut ou essayer une autre langue."
+    },
+    "top": "Page Principale",
+    "other_languages": "Voir dans d'autres langues",
+    "not_translated": "Cette page n'est pas disponible dans votre langue."
 }
