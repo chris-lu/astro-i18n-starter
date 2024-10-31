@@ -16,7 +16,6 @@ export async function GET(context: APIContext) {
     const localeDescription = t("site.description");
 
     const posts = await getCollection('blog', ({ slug }) => {
-        console.log(slug);
         return slug.split("/")[0] == locale;
     });
 
@@ -27,7 +26,7 @@ export async function GET(context: APIContext) {
         site: context.site || import.meta.env.WEBSITE_URL,
         // Blog posts
         items: posts.map((post) => {
-            let [lang, ...slug] = post.slug.split("/");
+            let [, ...slug] = post.slug.split("/");
             return ({
                 // Fix wrong slog prefix
                 title: post.data.title,
